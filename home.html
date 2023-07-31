@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project Domus</title>
+        <link rel="stylesheet" href="domus.css">
+      </head>
+      <body translate="no">
+        <style>
+            @import url('https://fonts.cdnfonts.com/css/glacial-indifference-2');
+          
+          /* Set additional styling options for the columns*/
+
+          
+          .column {
+          float: left;
+          width: 64%;
+          height: 100%;
+          border-top: 10px solid #b8c4ec;
+          border-bottom: 10px solid #b8c4ec;
+          border-left: 10px solid #b8c4ec;
+
+          
+          }
+          .column1{
+          float: left;
+          width: 35%;
+          min-height: 500px;
+          height: 100%;
+          }
+
+          .row:after {
+          content: "";
+          display: table;
+          clear: both;
+          }
+
+          #maintitle {
+            font-size: 100px;
+            color: #6f8cd2;
+            margin-left:30px; 
+          }
+            
+          #mainline { 
+            height:10px;
+            width: 50%;
+            border-width:0;
+            background-color:#6f8cd2;
+            margin-left:5%;
+          }
+          .button {
+            border: none;
+            background-color: #6f8cd2;
+            color: #d3d3d3;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 32px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            margin-left:5%;
+          }
+          .button:hover {
+            background-color: #d3d3d3;
+            color: #6f8cd2;
+          }
+
+          .mainimage {
+            opacity: 0.5;
+            min-height:1080px;
+            border: 10px solid #6f8cd2;
+            width: 600px;
+          }
+
+        </style>
+        <div class="row">       
+          <div class="column" style="background-color:#d3d3d3;">
+              <h1 id="maintitle">Project Domus<hr id="mainline" align="left"></h1>   
+              <a href="(1)problem.html"  
+                <button class="button" >
+                  <h1>
+                    See What's Happening! 
+                  </h1>  
+                </button> 
+              </a>  
+                <canvas id="particle" style="background:transparent;"></canvas>
+          </div>
+          <div class="column1"><img src="housingcrisis.png" class="mainimage">
+          </div>
+          
+          <script>
+          var width, height, target, canvas, ctx, circles;
+      particleInit();
+      particleAddListeners();
+      
+      function particleAddListeners() {
+        window.addEventListener('resize', particleResize);
+      }
+      
+      function particleInit() {
+        width = window.innerWidth/2;
+        width = width * 1.25
+        height = window.innerHeight/2;
+        height = height * 1.25
+        target = {
+          x: 0,
+          y: height
+        };
+        canvas = document.getElementById('particle');
+        canvas.width = width;
+        canvas.height = height;
+        ctx = canvas.getContext('2d');
+      
+        circles = [];
+        for( var x = 0; x < width*0.25; x++ ) {
+          var c = new particleCircle();
+          circles.push(c);
+        }
+        particleAnimate();
+      }
+      
+      function particleResize() {
+        width = 300;
+        height = 500;
+        canvas.width = width;
+        canvas.height = height;
+      }
+      
+      function particleAnimate() {
+        ctx.clearRect(0, 0, width, height);
+        for( var i in circles ) {
+          circles[i].draw();
+        }
+        requestAnimationFrame(particleAnimate);
+      }
+      
+      function particleCircle() {
+        var _this = this;
+      
+        (function() {
+          _this.pos = {};
+          init();
+        })();
+      
+        function init() {
+          _this.pos.x = Math.random() * width;
+          _this.pos.y = height + Math.random() * 100;
+          _this.alpha = 0.2 + Math.random() * 0.4;
+          _this.scale = 0.4 + Math.random();
+          _this.velocity = Math.random() * 1.6;
+        }
+      
+        _this.draw = function() {
+          if ( _this.alpha <= 0 ) {
+            init();
+          }
+          _this.pos.y -= _this.velocity;
+          _this.alpha -= 0.0005;
+          ctx.beginPath();
+          ctx.arc(_this.pos.x, _this.pos.y, _this.scale * 10, 0, 2 * Math.PI, false);
+          ctx.fillStyle = 'rgba(111,140,210,' +  _this.alpha + ')';
+          ctx.fill();
+        };
+      }
+          </script>
+        
+        
+      </body>
+      </html>
+ 

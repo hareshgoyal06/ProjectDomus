@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project Domus</title>
+        <link rel="stylesheet" href="domus.css">
+    </head>
+      <body translate="no">
+        <style>
+            @import url('https://fonts.cdnfonts.com/css/glacial-indifference-2');
+            #main {
+                width:100%;
+            }
+            .column {
+                float: left;
+                width: 60%;
+                }
+            .column1, .column2 { 
+                float: left;
+                width: 20%;
+            }
+                /* Clear floats after the columns */
+                .row:after {
+                content: "";
+                display: table;
+                clear: both;
+                }
+            h2 {
+                text-align: center;
+                font-size: 20px;
+            }
+
+            .column {
+                background-color: #d3d3d3;
+            }
+
+            .column1 {
+                background-color: #F1C400;
+            }
+            
+            .column2 {
+                background-color: #38B6FF;
+            }
+            .topnav {
+                background-color: #d3d3d3;
+                overflow: hidden;
+                position: sticky;
+            }
+
+            .topnav a {
+                float: left;
+                color: #38B6FF;
+                text-align: center;
+                padding: 17px 16px;
+                text-decoration: none;
+                font-size: 20px;
+                position: sticky;
+                margin-left:14%;
+
+            }
+
+            .topnav a:hover {
+                color: white;
+                }
+
+            #logo {
+                margin-left: 45%;
+                height:200px;
+            }
+
+            #linebreak {
+                height:10px;
+                border-width:0;
+                background-color:#38B6FF;
+            }
+            .button {
+                background-color: #F5BD1F;
+                border: none;
+                color: white;
+                padding: 13px 27px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 26px;
+                margin: 5px 3px;
+                cursor: pointer;
+                margin-left: 18%;
+                transition-duration: 0.6s;
+                border: 2px solid #F5BD1F;
+                width:13.2%
+            }
+
+            .button:hover {
+                background-color: white;
+                color: #F5BD1F;
+                border: 2px solid #F5BD1F;
+            }
+
+           
+
+        </style>
+             <div class="top">
+                <img src="projectdomus .png" id="logo">
+                <hr id="linebreak">
+            </div>       
+            <div>
+            </div>       
+            <!-- This is for the navigation bar-->
+            <div>
+                <div class="topnav">           
+                    <nav id="navbar">       
+                        <a id="nav" href="(1)problem.html"><b>Learn</b></a>
+                        <a id="nav" href="(2)connect.html"><b>Connect</b></a>
+                        <a id="nav" href="(3)educate.html"><b>Educate</b></a>
+                        <a id="nav" href="(4)build.html"><b>Build</b></a>
+                </div>
+                <img src="Project Domus.1.png" id="main">
+                <hr id="linebreak">
+            </div>
+            <div>
+                <h1 style="text-align: center; margin-left:10%; margin-right:10%; font-size:85px; color:#F1C400">Discover Those Around You</h1>
+            </div
+            <div>
+            <div>
+                <div style="width: 55%; float:right">
+                    <img src="" id="png" style="width:700px; height:500px; margin:5%; border: 2px solid #F5BD1F;" />
+                 </div>
+                <div style=" text-align: left;">
+                    <h1 style="text-align: left; margin-left:10%; margin-right:10%; font-size:45px; color:#38B6FF">Select An Ethnic Group: </h1>
+                    <input type="button" class="button" value="Indian" onclick="pic(this)" /><br>
+                    <input type="button" class="button" value="Chinese" onclick="pic(this)" /><br>
+                    <input type="button" class="button" value="Ukrainian" onclick="pic(this)" /><br>
+                    <input type="button" class="button" value="Nigerian" onclick="pic(this)" /><br>
+                    <input type="button" class="button" value="Polish" onclick="pic(this)" />
+                </div>
+            </div>
+            <div>
+                <br><br><br>
+                <h1 style="text-align: center; margin-left:10%; margin-right:10%; font-size:85px; color:#F1C400"><br>Discuss. Talk. Explore</h1>
+                <h1 style="text-align: center; margin-left:10%; margin-right:10%; font-size:65px; color:#000000">Sign Up Today.</h1>
+                <img src="Connect.png" style="width:100%;">
+            </div>
+            <hr id="linebreak">
+
+
+
+
+             
+        <script type="text/javascript">
+            function pic(picture) {
+            var picture;
+                if (picture.value === 'Indian') {
+                document.getElementById("png").src = "indian.png";
+                
+                } else if (picture.value === 'Chinese') {
+                document.getElementById("png").src = "chinese.png";
+            }
+                else if (picture.value === 'Nigerian') {
+                    document.getElementById("png").src = "nigerian.png";
+                }
+                else if (picture.value === 'Ukrainian') {
+                    document.getElementById("png").src = "ukrainian.png";
+                }
+                else if (picture.value === 'Polish') {
+                    document.getElementById("png").src = "polish.png";
+                }
+        }
+        </script>
+      </body>
+</html>
